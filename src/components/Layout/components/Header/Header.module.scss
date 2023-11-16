@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@400;500;600;700&display=swap');
+
+.wrapper {
+    --search-background-color: #000;
+    --text-search-color: #aca8a8;
+    height: var(--default-layout-header-height);
+    width: var(--default-layout-width);
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.wrapper-logo {
+    width: 732px;
+    margin-right: 48px;
+}
+
+.logo {
+    float: right;
+}
+
+.action {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search {
+    background-color: var(--search-background-color);
+    width: 184px;
+    display: flex;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    input {
+        background-color: var(--search-background-color);
+        flex: 1;
+        color: var(--text-search-color);
+        border: none;
+        outline: none;
+        height: 25px;
+    }
+}
+
+.clear {
+    background-color: var(--search-background-color);
+    color: var(--text-search-color);
+}
+
+.loading {
+    color: var(--text-search-color);
+}
+
+.clear,
+.loading {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.my-account,
+.my-cart {
+    display: flex;
+    align-items: center;
+    img {
+        margin-right: 12px;
+    }
+}
+
