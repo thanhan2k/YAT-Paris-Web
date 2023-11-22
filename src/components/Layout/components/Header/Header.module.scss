@@ -1,71 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@400;500;600;700&display=swap');
 
 .wrapper {
-    --search-background-color: #000;
-    --text-search-color: #aca8a8;
-    height: var(--default-layout-header-height);
-    width: var(--default-layout-width);
+    --search-background-color: rgba(255, 255, 255, 0.12);
+    --search-text-color: rgba(255, 255, 255, 0.9);
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --search-top-spacer: 9px;
+    --search-button-width: 52px;
+
+    height: var(--layout-header-height);
+    width: var(--layout-width);
     background-color: var(--black);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 40% 1fr;
     align-items: center;
+    gap: 10px;
     color: #fff;
 }
 
-.wrapper-logo {
-    width: 732px;
-    margin-right: 48px;
-}
-
 .logo {
-    float: right;
-}
-
-.action {
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-    align-items: center;
+    justify-self: center;
 }
 
 .search {
-    background-color: var(--search-background-color);
-    width: 184px;
-    display: flex;
-    border-bottom: 1px solid #fff;
+    justify-self: center;
     position: relative;
+    width: 500px;
+    height: var(--search-height);
+    display: flex;
+    background-color: var(--search-background-color);
+    border-radius: var(--search-border-radius);
+    padding-left: 16px;
+    border: 1.5px solid transparent;
+
     input {
-        background-color: var(--search-background-color);
+        height: 100%;
         flex: 1;
-        color: var(--text-search-color);
-        border: none;
-        outline: none;
-        height: 25px;
+        color: var(--search-text-color);
+        font-size: 1.6rem;
+        background-color: transparent;
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(255, 255, 255, .75);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: var(--search-top-spacer);
+        right: var(--search-button-width);
+        width: 1px;
+        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
+        background-color: rgba(255, 255, 255, 0.12);
+    }
+    
+    &:focus-within {
+        border-color: rgba(255, 255, 255, 0.217);
     }
 }
 
-.clear {
-    background-color: var(--search-background-color);
-    color: var(--text-search-color);
-}
-
-.loading {
-    color: var(--text-search-color);
-}
 
 .clear,
 .loading {
     position: absolute;
-    right: 0;
+    right:calc(var(--search-button-width) + 16px);
     top: 50%;
     transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.34);
+    background-color: transparent;
+}
+
+.search-btn {
+    width: var(--search-button-width);
+    height: 100%;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.34);
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    background-color: transparent;
+    line-height: var(--search-height);
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ffffff1f;
+        color: var(--search-text-color);
+    }
+
+}
+
+.action {
+    justify-self: end;
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .my-account,
 .my-cart {
     display: flex;
     align-items: center;
+    margin-right: 20px;
     img {
         margin-right: 12px;
     }
 }
-

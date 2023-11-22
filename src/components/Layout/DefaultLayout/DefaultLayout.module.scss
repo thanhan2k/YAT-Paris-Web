@@ -1,0 +1,15 @@
+.wrapper {
+}
+
+.container {
+    background-color: aquamarine;
+    padding: 0 30px;
+    display: flex;
+    min-height: 447px;
+    width: var(--layout-width);
+}
+
+.content {
+    flex: 1;
+    background-color: #d17575;
+}

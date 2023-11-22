@@ -1,0 +1,23 @@
+.wrapper {
+    height: var(--nav-height);
+    background-color: #000;
+    width: var(--layout-width);
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.link-style {
+    padding: 0 30px;
+    display: block;
+    height: var(--nav-height);
+    line-height: var(--nav-height);
+    font-weight: 700;
+    font-size: 1.2rem;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.151);
+    }
+}
