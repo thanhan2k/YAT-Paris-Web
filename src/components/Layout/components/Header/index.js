@@ -12,24 +12,27 @@ const cx = classNames.bind(styles);
 function Header() {
     return (
         <header className={cx('wrapper')}>
-            <div className={cx('wrapper-logo')}>
-                <img className={cx('logo')} src={images.logo} alt="LOGO" width="184" height="90" />
+            <div className={cx('logo')}>
+                <img src={images.logo} alt="LOGO SHOP"/>
+            </div>
+            <div className={cx('search')}>
+                <input placeholder="Search" spellCheck={false} />
+                <button className={cx('clear')}>
+                    <FontAwesomeIcon icon={faCircleXmark} />
+                </button>
+                <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+                <button className={cx('search-btn')}>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </button>
             </div>
             <div className={cx('action')}>
-                <div className={cx('search')}>
-                    <input placeholder="Search" spellCheck={false} />
-                    {/* <button className={cx('clear')}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </button>
-                    <FontAwesomeIcon className={cx('loading')} icon={faSpinner} /> */}
-                </div>
                 <div className={cx('my-account')}>
                     <img src={images.user} alt="LOGO" width="24" height="24" />
-                    MY ACCOUNT
+                    TÀI KHOẢN
                 </div>
                 <div className={cx('my-cart')}>
                     <img src={images.cart} alt="LOGO" width="24" height="24" />
-                    MY CART
+                    GIỎ HÀNG
                 </div>
             </div>
         </header>
